@@ -25,12 +25,9 @@ export default function NavBar(): JSX.Element {
   return (
     <header className="bg-gray-900 sticky top-0 z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-30">
           {/* Logo */}
-          <div className="flex-shrink">
-            <img src={iiti} alt="Logo" className="h-10 w-auto" />
-          </div>
-
+          <a href="https://www.iiti.ac.in"> <img id="thelogo" src="https://www.iiti.ac.in/public/themes/iitindore/demos/update-logo.png"  className="logo h-30 w-30" alt="Images-Logo-4"/></a>
           {/* Desktop Menu */}
           <nav className="hidden md:flex space-x-6">
             {navigation.map((item) => (

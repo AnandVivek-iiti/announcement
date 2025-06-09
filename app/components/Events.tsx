@@ -52,11 +52,12 @@ export default function Example() {
               <p className="text-gray-700 font-medium">📍 Location: {event.location}</p>
               <p className="text-gray-800 font-semibold">🎭 Event: {event.name}</p>
               <p className="text-gray-600">Conducted by: {event.club}</p>
+            
               <button
                 className="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
                 id={`joinEvent${event.id}`}
               >
-                Join Event
+                Explore Event
               </button>
             </div>
           </div>
