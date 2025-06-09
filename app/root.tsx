@@ -5,7 +5,8 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "react-router";
+}
+ from "react-router";
 import Events from './components/Events';
 import NavBar from './components/NavBar';
 import type { Route } from "./+types/root";

@@ -1,6 +1,6 @@
 import { useState, type JSX } from 'react';
 // import React from 'react'
-
+import iiti from './iiti.png';
 interface NavItem {
   name: string;
   href: string;
@@ -27,8 +27,8 @@ export default function NavBar(): JSX.Element {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <img src="./b2fad418-0d36-4b88-881b-278036d7412d.png" alt="Logo" className="h-10 w-auto" />
+          <div className="flex-shrink">
+            <img src={iiti} alt="Logo" className="h-10 w-auto" />
           </div>
 
           {/* Desktop Menu */}

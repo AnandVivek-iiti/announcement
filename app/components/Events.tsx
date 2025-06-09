@@ -1,165 +1,73 @@
+// import React from 'react';
+import exampleImage from './image.png'; // relative to Events.tsx
+// import iiti from './iiti.png';
+type Event = {
+  id: number;
+  time: string;
+  location: string;
+  name: string;
+  club: string;
+  image: string;
+};
+
+const events: Event[] = [
+  {
+    id: 1,
+    time: '6pm today',
+    location: 'Near tea post',
+    name: 'Nukkad Natak',
+    club: 'Avana and Aaina collab',
+    image: exampleImage,
+  },
+  ...Array.from({ length: 8 }, (_, i) => ({
+    id: i + 2,
+    time: '6pm today',
+    location: 'Near tea post',
+    name: 'Nukkad Natak',
+    club: 'Avana and Aaina collab',
+    image: exampleImage,
+  })),
+];
+
 export default function Example() {
   return (
-    
-    <div className="Events">
-    <h1>Events</h1>
-    <div className="event-container">
-      <div className="list-events">
-        <div className="event-detail">
-          <div className="event-logo flex shrink-0 items-center">
-               <img
-                alt="Your Event"
-                src="iiti_logo.png"
-                className="h-8 w-auto"
+    <div className="p-4 bg-gray-50 min-h-screen">
+      <h1 className="text-3xl font-bold mb-6 text-center">Events</h1>
+      
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {events.map((event) => (
+          <div
+            key={event.id}
+            className="event-detail border rounded-2xl shadow-md p-4 bg-white space-y-3"
+          >
+            <div className="event-logo flex items-center justify-center">
+              <img
+                alt="Event Logo"
+                src={event.image}
+                className="h-120 w-120"
               />
+            </div>
+            <div className="event-description space-y-1">
+              <p className="text-gray-700 font-medium">🕒 Time: {event.time}</p>
+              <p className="text-gray-700 font-medium">📍 Location: {event.location}</p>
+              <p className="text-gray-800 font-semibold">🎭 Event: {event.name}</p>
+              <p className="text-gray-600">Conducted by: {event.club}</p>
+              <button
+                className="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                id={`joinEvent${event.id}`}
+              >
+                Join Event
+              </button>
+            </div>
           </div>
-          <div className="event-description">
-            <p className="TimeOfEvent" id="TimeOfEvent1">Time : 6pm today </p>
-            <p className="locationOfEvent" id="locationOfEvent1">Location : Near tea post </p>
-            <p className="NameOfEvent" id="NameOfEvent1">Name of event :Nukkad Natak  </p>
-            <p className="ClubOfEvent" id="ClubOfEvent1">Conducted by : Avana and Aaina collab </p>
-            <button className="joinEvent" id="joinEvent1" type="button">Join Event</button>
-          </div>
-          </div>
-          <div className="event-detail">
-          <div className="event-logo flex shrink-0 items-center">
-               <img
-                alt="Your Event"
-                src="./image.png"
-                className="h-8 w-auto"
-              />
-          </div>
-          <div className="event-description">
-            <p className="TimeOfEvent" id="TimeOfEvent1">Time : 6pm today </p>
-            <p className="locationOfEvent" id="locationOfEvent1">Location : Near tea post </p>
-            <p className="NameOfEvent" id="NameOfEvent1">Name of event :Nukkad Natak  </p>
-            <p className="ClubOfEvent" id="ClubOfEvent1">Conducted by : Avana and Aaina collab </p>
-            <button className="joinEvent" id="joinEvent2" type="button">Join Event</button>
-          </div>
-          </div>
-          <div className="event-detail">
-          <div className="event-logo flex shrink-0 items-center">
-               <img
-                alt="Your Event"
-                src="./image.png"
-                className="h-8 w-auto"
-              />
-          </div>
-          <div className="event-description">
-            <p className="TimeOfEvent" id="TimeOfEvent1">Time : 6pm today </p>
-            <p className="locationOfEvent" id="locationOfEvent1">Location : Near tea post </p>
-            <p className="NameOfEvent" id="NameOfEvent1">Name of event :Nukkad Natak  </p>
-            <p className="ClubOfEvent" id="ClubOfEvent1">Conducted by : Avana and Aaina collab </p>
-            <button className="joinEvent" id="joinEvent3" type="button">Join Event</button>
-          </div>
-          </div>
-          <div className="event-detail">
-          <div className="event-logo flex shrink-0 items-center">
-               <img
-                alt="Your Event"
-                src="./image.png"
-                className="h-8 w-auto"
-              />
-          </div>
-          <div className="event-description">
-            <p className="TimeOfEvent" id="TimeOfEvent1">Time : 6pm today </p>
-            <p className="locationOfEvent" id="locationOfEvent1">Location : Near tea post </p>
-            <p className="NameOfEvent" id="NameOfEvent1">Name of event :Nukkad Natak  </p>
-            <p className="ClubOfEvent" id="ClubOfEvent1">Conducted by : Avana and Aaina collab </p>
-            <button className="joinEvent" id="joinEvent4" type="button">Join Event</button>
-          </div>
-          </div>
-          <div className="event-detail">
-          <div className="event-logo flex shrink-0 items-center">
-               <img
-                alt="Your Event"
-                src="./image.png"
-                className="h-8 w-auto"
-              />
-          </div>
-          <div className="event-description">
-            <p className="TimeOfEvent" id="TimeOfEvent1">Time : 6pm today </p>
-            <p className="locationOfEvent" id="locationOfEvent1">Location : Near tea post </p>
-            <p className="NameOfEvent" id="NameOfEvent1">Name of event :Nukkad Natak  </p>
-            <p className="ClubOfEvent" id="ClubOfEvent1">Conducted by : Avana and Aaina collab </p>
-            <button className="joinEvent" id="joinEvent5" type="button">Join Event</button>
-          </div>
-          </div>
-          <div className="event-detail">
-          <div className="event-logo flex shrink-0 items-center">
-               <img
-                alt="Your Event"
-                src="./image.png"
-                className="h-8 w-auto"
-              />
-          </div>
-          <div className="event-description">
-            <p className="TimeOfEvent" id="TimeOfEvent1">Time : 6pm today </p>
-            <p className="locationOfEvent" id="locationOfEvent1">Location : Near tea post </p>
-            <p className="NameOfEvent" id="NameOfEvent1">Name of event :Nukkad Natak  </p>
-            <p className="ClubOfEvent" id="ClubOfEvent1">Conducted by : Avana and Aaina collab </p>
-            <button className="joinEvent" id="joinEvent6" type="button">Join Event</button>
-          </div>
-          </div>
-          <div className="event-detail">
-          <div className="event-logo flex shrink-0 items-center">
-               <img
-                alt="Your Event"
-                src="./image.png"
-                className="h-8 w-auto"
-              />
-          </div>
-          <div className="event-description">
-            <p className="TimeOfEvent" id="TimeOfEvent1">Time : 6pm today </p>
-            <p className="locationOfEvent" id="locationOfEvent1">Location : Near tea post </p>
-            <p className="NameOfEvent" id="NameOfEvent1">Name of event :Nukkad Natak  </p>
-            <p className="ClubOfEvent" id="ClubOfEvent1">Conducted by : Avana and Aaina collab </p>
-            <button className="joinEvent" id="joinEvent7" type="button">Join Event</button>
-          </div>
-          </div>
-          <div className="event-detail">
-          <div className="event-logo flex shrink-0 items-center">
-               <img
-                alt="Your Event"
-                src="./image.png"
-                className="h-8 w-auto"
-              />
-          </div>
-          <div className="event-description">
-            <p className="TimeOfEvent" id="TimeOfEvent1">Time : 6pm today </p>
-            <p className="locationOfEvent" id="locationOfEvent1">Location : Near tea post </p>
-            <p className="NameOfEvent" id="NameOfEvent1">Name of event :Nukkad Natak  </p>
-            <p className="ClubOfEvent" id="ClubOfEvent1">Conducted by : Avana and Aaina collab </p>
-            <button className="joinEvent" id="joinEvent8" type="button">Join Event</button>
-          </div>
-          </div>
-          <div className="event-detail">
-          <div className="event-logo flex shrink-0 items-center">
-               <img
-                alt="Your Event"
-                src="./image.png"
-                className="h-8 w-auto"
-              />
-          </div>
-          <div className="event-description">
-            <p className="TimeOfEvent" id="TimeOfEvent1">Time : 6pm today </p>
-            <p className="locationOfEvent" id="locationOfEvent1">Location : Near tea post </p>
-            <p className="NameOfEvent" id="NameOfEvent1">Name of event :Nukkad Natak </p>
-            <p className="ClubOfEvent" id="ClubOfEvent1">Conducted by : Avana and Aaina collab </p>
-            <button className="joinEvent" id="joinEvent9" type="button">Join Event</button>
-          </div>
-          </div>
-          </div>
+        ))}
       </div>
-        <div className="footer-home">
-    <p>contact us  </p>
-    <p> help </p>
-    <p> Share </p>
-    </div>
 
+      <footer className="footer-home mt-10 text-center text-sm text-gray-500 space-x-4">
+        <span>Contact us          </span>
+        <span>|          Help</span>
+        <span>|          Share</span>
+      </footer>
     </div>
-  
- 
-  
-  )}
-
+  );
+}
