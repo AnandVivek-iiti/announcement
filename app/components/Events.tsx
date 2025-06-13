@@ -1,6 +1,9 @@
 // import React from 'react';
 import exampleImage from './image.png'; // relative to Events.tsx
-// import iiti from './iiti.png';
+import insta from './insta.png';
+import linkedIn from './linkedIn.png';
+import twitter from './twitter.png';
+import facebook from './facebook.png';
 type Event = {
   id: number;
   time: string;
@@ -64,11 +67,46 @@ export default function Example() {
         ))}
       </div>
 
-      <footer className="footer-home mt-10 text-center text-sm text-gray-500 space-x-4">
-        <span>Contact us          </span>
-        <span>|          Help</span>
-        <span>|          Share</span>
-      </footer>
+   <footer className="footer-home mt-10 text-center text-sm text-gray-500 space-x-4">
+  <span>Contact us</span>
+  <span>| Help</span>
+  <span>| Share</span>
+
+  <div className="Social-Handles mt-4 flex justify-center items-center gap-4">
+    <a
+      href="https://www.instagram.com/iitindoreofficial"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src={insta} alt="IIT Indore Instagram" className="h-8 w-8" />
+    </a>
+
+    <a
+      href="https://www.linkedin.com/school/iit-indore"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src={linkedIn} alt="IIT Indore LinkedIn" className="h-8 w-8" />
+    </a>
+
+    <a
+      href="https://x.com/iitiofficial"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src={twitter} alt="IIT Indore X" className="h-6 w-6" />
+    </a>
+
+    <a
+      href="https://www.facebook.com/people/IIT-Indore"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src={facebook} alt="IIT Indore Facebook" className="h-8 w-8" />
+    </a>
+  </div>
+</footer>
+
     </div>
   );
 }

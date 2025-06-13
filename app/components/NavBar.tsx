@@ -1,6 +1,6 @@
 import { useState, type JSX } from 'react';
 // import React from 'react'
-import iiti from './iiti.png';
+// import iiti from './iiti.png';
 interface NavItem {
   name: string;
   href: string;

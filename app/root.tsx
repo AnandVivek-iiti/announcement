@@ -9,6 +9,7 @@ import {
  from "react-router";
 import Events from './components/Events';
 import NavBar from './components/NavBar';
+// import ClubPage from './components/'
 import type { Route } from "./+types/root";
 import "./app.css";
 
@@ -35,11 +36,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <div className="Home " >
         {children}
         <ScrollRestoration />
         <Scripts />
         <NavBar />
         <Events />
+        {/* <ClubPage /> */}
+        </div>
       </body>
     </html>
   );
